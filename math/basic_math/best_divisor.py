@@ -68,7 +68,7 @@ def get_smaller_number(first_number,second_number):
 	return smaller_number
 
 # 4. Compare
-def compare_numbers(first_number,second_number):
+def compare_numbers_digits(first_number,second_number):
 	"""
 	Sum the digits of two different numbers, the one whose digits sum to a
 	larger number is better than the other. If the sum of digits is
@@ -94,10 +94,32 @@ def compare_numbers(first_number,second_number):
 		best_number = second_number
 
 	return best_number
+
+def compare_numbers(first_number,second_number):
+	"""
+	Compare if if numbers are equal or different. If numbers are equal, then
+	none of them is better than the other, if they are different get the
+	best number.
+
+	Args:
+		first_number: The first number entered by the user
+		second_number: The second number entered by the user
+
+	Returns:
+		message: The message with the best number if any
+	"""
+	mesage = ""
 	
+	if(first_number == second_number):
+		message = "There is no best number"
+	else:
+		best_number = compare_numbers_digits(first_number,second_number)
+		message = "The best number is: {}".format(best_number)
+
+	return message
 
 best_number = compare_numbers(first_number,second_number)
-print("The best number is: {}".format(best_number))
+print(best_number)
 
 
 
