@@ -7,25 +7,25 @@ will need to do some Internet research to determine the area of that region.
 """
 # A cubic meter also equals 1000 liters or a million cubic centimeters.
 # Cubic
-great_lake_water = 22810
+GREAT_LAKE_WATER = 22810
 
 # Cuadratic
-california_surface = 423972
-nevada_surface = 286380
-utah_surface = 219882
-arizona_surface = 295234
-colorado_surface = 269601
-nuevo_mexico_surface = 314917
+CALIFORNIA_SURFACE = 423972
+NEVADA_SURFACE  = 286380
+UTAH_SURFACE  = 219882
+ARIZONA_SURFACE  = 295234
+COLORADO_SURFACE  = 269601
+NUEVO_MEXICO_SURFACE  = 314917
 
 
-states = [california_surface,nevada_surface,utah_surface,arizona_surface,
+STATES = [california_surface,nevada_surface,utah_surface,arizona_surface,
 colorado_surface,nuevo_mexico_surface
 ]
 
 
 def sum_surfaces(states):
 	"""
-	Sum the surfaces of the 48 states
+	Sum the surfaces of the 48 continguous states
 
 	Args:
 		states: An array with all the surfaces
