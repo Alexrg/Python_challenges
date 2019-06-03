@@ -3,7 +3,7 @@ The perimeter of a rectangle is 2w+2h, where w and h are the lengths of its
 sides. Write a Python statement that calculates and prints the length in
 inches of the perimeter of a rectangle with sides of length 4 and 7 inches.
 """
-def rectangle(width, heigth):
+def rectangle_perimeter(width, heigth):
 	"""
 	Convert distance units from miles to feet
 	Args:
@@ -16,4 +16,4 @@ def rectangle(width, heigth):
 	perimeter = 2 * width + 2 * heigth
 	return perimeter
 
-perimeter = rectangle(4,7)
+rectangle = rectangle_perimeter(4,7)
