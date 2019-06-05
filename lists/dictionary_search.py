@@ -6,6 +6,17 @@ first_name doesn't match any of those strings, return the
 string "Error : Not an instructor".
 """
 def name_lookup(first_name):
+	"""
+	Given the first name of the instructor, returns the last name gotten
+	from the dictionary
+	
+	Args:
+		first_name (string): First name of the instructor
+
+	Returns:
+		last_name (string): Last name of the instructor
+	"""
+	# Dictionary with all the instructors' names
 	instructors  = {
 		'Joe': 'Warren',
 		'Scott': 'Rixner',
@@ -13,13 +24,12 @@ def name_lookup(first_name):
 		'Stephen': 'Wong'
 	}
 
-	instructor = instructors.get(first_name)
+	last_name = instructors.get(first_name)
 	
-	if instructor == None :
-		instructor = "Error: The name entered does not belong to an instructor"
+	if last_name == None :
+		last_name = "Error: The name entered does not belong to an instructor"
 	
-	return instructor
+	return last_name
 
 first_name = 'Carmen'
-
-print(name_lookup(first_name))
+name_lookup(first_name)
