@@ -53,7 +53,7 @@ examples is arbitrary. Python only keeps track of the numerical values, not
 the units.
 """
 def polygon_area(number_of_sides, side_length):
-		"""
+	"""
 	Calculate the area of a polygon given the number of sides and their length
 	Args:
 		number_of_sides (number): Number of sides of the polygon
@@ -65,5 +65,5 @@ def polygon_area(number_of_sides, side_length):
 	area = (number_of_sides * math.pow(side_length,2)) / (4 * math.tan(math.pi/number_of_sides))
 	return area
 
-polygon = polygon_area(5, 7)
-print("The area of a 5 side polygon is {}".format(polygon))
+polygon = polygon_area(7, 3)
+print("The area of a 7 sides polygon is {}".format(polygon))
