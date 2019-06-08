@@ -35,3 +35,34 @@ def name_to_number(name):
 
 number_choice = name_to_number('lizard')
 print(number_choice)
+
+def number_to_name(number):
+	"""
+	Given the number of the game choices, returns the name it represents in the game
+	
+	Args:
+		number_choice (number): The number given by the player that represents
+								the given choice
+
+	Returns:
+		name (string): The name of the game choice
+	"""
+	game_choices = {
+		0 : 'rock',
+		1 : 'paper',
+		2 : 'scissors',
+		3 : 'lizard',
+		4 : 'spock'
+	}
+
+	# Get the name from the dictionary
+	name_choice = game_choices.get(number)
+
+	# If the given choice is not a vaild one
+	if name_choice == None:
+		name_choice = 'The given number is not a valid game choice'
+
+	return name_choice
+
+name_choice = number_to_name(3)
+print(name_choice)
