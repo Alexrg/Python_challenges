@@ -34,9 +34,6 @@ def name_to_number(name):
 
 	return number_choice
 
-number_choice = name_to_number('lizard')
-print(number_choice)
-
 def number_to_name(number):
 	"""
 	Given the number of the game choices, returns the name it represents in the game
@@ -64,9 +61,6 @@ def number_to_name(number):
 		name_choice = 'The given number is not a valid game choice'
 
 	return name_choice
-
-name_choice = number_to_name(3)
-print(name_choice)
 
 def rpsls(player_choice):
     """
