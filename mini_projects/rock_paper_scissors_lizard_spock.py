@@ -67,3 +67,53 @@ def number_to_name(number):
 
 name_choice = number_to_name(3)
 print(name_choice)
+
+def rpsls(player_choice):
+    """
+	Get the player's choice and calculate the computer's to then calculate
+	who is the winner.
+	
+	Args:
+		player_choice (number): The player enters a choice choice
+	
+	Returns:
+		winner (string): A string prompting wether the computer or the player won
+	"""
+	# Print the available options in the game
+    print("""
+    Choose from the following options:
+    0 : ‘rock’
+    1 : ‘paper’
+    2 : ‘scissors’
+    3 : ‘lizard’
+    4 : ‘spock’
+    """)
+    
+    # Prompt the player and computer choices
+    player_number = name_to_number(player_choice)
+    player_choice_string = "Player chooses {}".format(player_choice)
+    print(player_choice_string)
+    comp_number = random.randint(0,4)
+    comp_choice = "Computer chooses {}".format(number_to_name(comp_number))
+    print(comp_choice)
+
+    # Get the difference of the points between both player options
+    diference_points = player_number - comp_number
+
+    # Calculate the winner 
+    winner = "It's a tie!"
+
+    if diference_points > 0 :
+    	winner = "Player wins!"
+    elif diference_points < 0 :
+    	winner = "Computer wins!"
+
+    print(winner)
+    
+    return winner
+
+rpsls("rock")
+rpsls("spock")
+rpsls("paper")
+rpsls("lizard")
+rpsls("scissors")
