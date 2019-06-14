@@ -8,6 +8,7 @@ returned string.
 def name_tag(first_name, last_name):
 	"""
 	Get a text with the full name of a person
+	
 	Args:
 		first name (string): First name of a person
 		last name (string): Last name of a person
@@ -20,3 +21,20 @@ def name_tag(first_name, last_name):
 
 full_name = name_tag('Alejandra', 'Rodriguez')
 print(full_name)
+
+
+"""
+Given the program template below, write a Python function print_goodbye() that
+defines a local variable message whose value is "Goodbye" and prints the value
+of this local variable to the console. Note that the existing global variable
+message retains its original value "Hello" after the call to print_goodbye() 
+"""
+def print_goodbye():
+	"""
+	Returns a "Goodbye" message to the user
+
+	Returns:
+		messafe (string): A "Goodbye" message to the user
+	"""
+	message = "Goodbye"
+	return message
