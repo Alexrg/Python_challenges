@@ -38,3 +38,14 @@ def print_goodbye():
 	"""
 	message = "Goodbye"
 	return message
+
+
+def print_hello():
+	"""
+	Returns a "Goodbye" message to the user
+
+	Returns:
+		messafe (string): A "Goodbye" message to the user
+	"""
+	message = "Hello"
+	return message
