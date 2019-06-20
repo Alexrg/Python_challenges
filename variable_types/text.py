@@ -34,7 +34,7 @@ def print_goodbye():
 	Returns a "Goodbye" message to the user
 
 	Returns:
-		messafe (string): A "Goodbye" message to the user
+		message (string): A "Goodbye" message to the user
 	"""
 	message = "Goodbye"
 	return message
@@ -42,10 +42,12 @@ def print_goodbye():
 
 def print_hello():
 	"""
-	Returns a "Goodbye" message to the user
+	Returns a "Hello" message to the user
 
 	Returns:
-		messafe (string): A "Goodbye" message to the user
+		message (string): A "Goodbye" message to the user
 	"""
 	message = "Hello"
 	return message
+
+print("{}, {}".format(print_hello(), full_name))
