@@ -13,16 +13,25 @@ only works there. Create an interactive console thet greets the user.
 color = "black"
 
 def set_red():
+	"""
+	Set the background color to red
+	"""
     global color
     color = "red"
     frame.set_canvas_background(color)
     
 def set_blue():
+	"""
+	Set the background color to blue
+	"""
     global color
     color = "blue"
     frame.set_canvas_background(color)
     
 def print_color():
+	"""
+	Print the background color
+	"""
     print (color)
 
 
