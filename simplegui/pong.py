@@ -5,7 +5,7 @@ import random
 Challenge: Implementation of classic arcade game Pong
 
 This code can only be run in https://py3.codeskulptor.org/ since simplegui
-only works there. Create an interactive console thet greets the user.
+only works there. Create an interactive Pong game.
 """
 
 # initialize globals - pos and vel encode vertical info for paddles
