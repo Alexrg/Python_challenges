@@ -153,3 +153,23 @@ def draw(canvas):
     # draw scores
     canvas.draw_text("You: {}".format(score1), [20,10], 15, "Green")
     canvas.draw_text("CPU: {}".format(score2), [530,10], 15, "Red")
+
+def keydown(key):
+    """
+    Change the velocity of the paddle every time any of the player enters a key
+
+    Global:
+        paddle1_vel (Number): The velocity of the paddle in the left
+        paddle2_vel (Number): The velocity of the paddle in the right
+    """
+    global paddle1_vel
+    global paddle2_vel
+
+    if key == simplegui.KEY_MAP["s"]:
+        paddle1_vel = 2
+    elif key == simplegui.KEY_MAP["w"]:
+        paddle1_vel = -2
+    if key == simplegui.KEY_MAP["down"]:
+        paddle2_vel = 2
+    elif key == simplegui.KEY_MAP["up"]:
+        paddle2_vel = -2
