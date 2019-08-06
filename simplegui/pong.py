@@ -52,3 +52,26 @@ def spawn_ball(direction):
         ball_vel = [.9,  -0.7]
     elif direction == False:
         ball_vel = [-.9,  0.7]
+
+def new_game():
+    """
+    Initiate a new Pong game spawning the ball in a random direction
+
+    Global:
+        paddle1_pos (Number): The position of the paddle
+        ball_pos (List): The position of tha ball
+        ball_vell (List): The velocity of tha ball
+    """
+    global paddle1_pos
+    global paddle2_pos
+    global paddle1_vel
+    global paddle2_vel 
+    global score1
+    global score2  
+    
+    score1 = 0
+    score2 = 0
+
+    direction = [LEFT, RIGHT]
+
+    spawn_ball(direction[random.randint(0,1)])
