@@ -14,3 +14,25 @@ stop_counter = 0
 seconds = 0
 success = 0
 attempts = 0
+
+def time_format(clock):
+    """
+    Gives format to the stopwatch
+    """
+    global seconds
+    
+    seconds = clock/10
+    minutes = int(seconds/60)
+    string_minutes = str(minutes)
+    seconds = round((seconds - (minutes * 60)),2)
+    string_seconds = str(seconds)
+    
+    if len(string_minutes) == 1 :
+        string_minutes = "0"+str(minutes)
+    
+    if len(string_seconds) == 3 :
+        string_seconds = "0"+str(seconds)
+    
+    format_clock = "{}:{}".format(string_minutes,string_seconds)
+    
+    return format_clock
