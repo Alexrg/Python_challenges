@@ -36,3 +36,10 @@ def time_format(clock):
     format_clock = "{}:{}".format(string_minutes,string_seconds)
     
     return format_clock
+
+def clock_counter():
+    """
+    The clock stop counter
+    """
+    global clock
+    clock += 1
