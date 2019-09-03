@@ -93,3 +93,16 @@ def background_draw(canvas):
     canvas.draw_text(str(game_text), (10, 50), 40, 'Red')
     format_clock = time_format(clock)
     canvas.draw_text(str(format_clock), (50, 100), 40, 'Red')
+
+# create frame
+frame = simplegui.create_frame("Stop watch", 200, 200)
+timer = simplegui.create_timer(100, clock_counter)
+frame.set_draw_handler(background_draw)
+
+# register event handlers
+frame.add_button("Start", start)
+frame.add_button("Stop", stop)
+frame.add_button("Reset", reset)
+
+# get frame rolling
+frame.start()
