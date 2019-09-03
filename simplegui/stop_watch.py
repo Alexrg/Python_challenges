@@ -43,3 +43,9 @@ def clock_counter():
     """
     global clock
     clock += 1
+
+def start():
+    """
+    Starts the timer
+    """
+    timer.start()
