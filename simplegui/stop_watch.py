@@ -81,3 +81,15 @@ def reset():
     
     clock = 0
     stop_counter = 0
+
+def background_draw(canvas):
+    """
+    Draws the timer numbers in the background
+    """
+    global success
+    global attempts
+    
+    game_text = "{}/{}".format(attempts,success)
+    canvas.draw_text(str(game_text), (10, 50), 40, 'Red')
+    format_clock = time_format(clock)
+    canvas.draw_text(str(format_clock), (50, 100), 40, 'Red')
