@@ -71,3 +71,13 @@ def stop():
     stop_counter += 1
     
     print("Number of times stoped: {}".format(stop_counter))
+
+def reset():
+    """
+    Starts the timer from zero
+    """
+    global clock
+    global stop_counter
+    
+    clock = 0
+    stop_counter = 0
