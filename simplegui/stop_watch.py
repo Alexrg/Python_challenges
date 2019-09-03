@@ -49,3 +49,25 @@ def start():
     Starts the timer
     """
     timer.start()
+
+def stop():
+    """
+    Stops the timer
+    """
+    global stop_counter
+    global seconds
+    global success
+    global attempts
+    
+    print(seconds)
+    seconds = str(seconds).split('.0')
+    
+    if len(seconds) == 2:
+        success += 1
+    else:
+        attempts += 1
+    
+    timer.stop()
+    stop_counter += 1
+    
+    print("Number of times stoped: {}".format(stop_counter))
