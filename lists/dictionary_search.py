@@ -31,5 +31,38 @@ def name_lookup(first_name):
 	
 	return last_name
 
-first_name = 'Carmen'
+first_name = 'Joe'
 name_lookup(first_name)
+
+def day_lookup(weekday):
+	"""
+	Given a day of the week, returns a number that represents it. If the given text
+	is not a weekday, it returns an error.
+
+	Args:
+		weekday (string): The day of the week.
+
+	Returns:
+		weekday_number (number or string): Returns a text with an error it the received
+										   string is not a weekday or if it is a correct
+										   weekday, it returns the asigned number.
+	"""
+	weekday_dictionary = {
+		'Sunday':0,
+		'Monday':1,
+		'Tuesday':2,
+		'Wednesday':3,
+		'Thursday':4,
+		'Friday':5,
+		'Saturday':6,
+	}
+
+	weekday_number = weekday_dictionary.get(weekday.capitalize())
+	
+	if weekday_number == None :
+		weekday_number = "Error: The text entered ({}) does not belong to any weekday, check your spelling.".format(weekday)
+
+	return weekday_number
+
+weekday = 'thuesdayr'
+day_lookup(weekday)
