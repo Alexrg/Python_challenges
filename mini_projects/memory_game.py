@@ -23,7 +23,8 @@ def new_game():
     """
     Shuffles randomly the cards deck every new game
     """
-    pass
+    global decks
+    random.shuffle(decks)
 
      
 # define event handlers
