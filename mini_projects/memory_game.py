@@ -38,7 +38,9 @@ def draw(canvas):
     """
     Draws the deck in the frame
     """
-    pass
+    for card_index, card in enumerate(decks):
+        card_pos = 50 * card_index
+        canvas.draw_text(str(card), (card_pos,10), 10, 'Red')
 
 
 # create frame and add a button and labels
