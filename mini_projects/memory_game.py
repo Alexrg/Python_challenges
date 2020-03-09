@@ -28,7 +28,7 @@ def new_game():
 
      
 # define event handlers
-def mouseclick(pos):
+def mouseclick(pos): 
     # add game state logic here
     pass
     
