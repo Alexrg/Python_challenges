@@ -33,7 +33,15 @@ def new_game():
 # define event handlers
 def mouseclick(pos): 
     # add game state logic here
-    pass
+    global exposed
+    
+    for card in range(0,len(exposed)):
+        if pos[0] >= card_pos[card] and pos[0] <= card_pos[card]+40:
+            if exposed[card] == True:
+                exposed[card] = False
+            elif exposed[card] == False: 
+                exposed[card] = True
+                print("Card number {}".format(card+1))
     
                         
 # cards are logically 50x100 pixels in size    
