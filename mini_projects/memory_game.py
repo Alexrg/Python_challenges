@@ -17,6 +17,8 @@ only works there. Create an interactive console thet greets the user.
 deck_one = list(range(0, 9))
 deck_two = list(range(0, 9))
 decks = deck_one + deck_two
+exposed = [True,False,False,False,False,False,False,False,
+          False,False,False,False,False,False,False,False]
 
 # helper function to initialize globals
 def new_game():
@@ -39,12 +41,16 @@ def draw(canvas):
     Draws the deck in the frame
     """
     for card_index, card in enumerate(decks):
-        card_pos = 50 * card_index
-        canvas.draw_text(str(card), (card_pos,10), 10, 'Red')
+        card_pos = (50 * card_index)+10
+        if exposed[card_index] == False:
+            canvas.draw_polygon([(card_pos,10), (card_pos+40,10), (card_pos+40,90),(card_pos,90),(card_pos,10)], 2, 'Red')
+        else:
+            canvas.draw_text(str(card), (card_pos+10,60), 40, 'Red')
+            canvas.draw_polygon([(card_pos,10), (card_pos+40,10), (card_pos+40,90),(card_pos,90),(card_pos,10)], 2, 'Red')
 
 
 # create frame and add a button and labels
-frame = simplegui.create_frame("Memory", 800, 100)
+frame = simplegui.create_frame("Memory", 810, 100)
 frame.add_button("Reset", new_game)
 label = frame.add_label("Turns = 0")
 
