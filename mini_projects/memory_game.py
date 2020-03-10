@@ -19,6 +19,7 @@ deck_two = list(range(0, 9))
 decks = deck_one + deck_two
 exposed = [True,False,False,False,False,False,False,False,
           False,False,False,False,False,False,False,False]
+card_pos = []
 
 # helper function to initialize globals
 def new_game():
@@ -40,13 +41,17 @@ def draw(canvas):
     """
     Draws the deck in the frame
     """
+    global card_pos
+    
+    card_pos = []
+    
     for card_index, card in enumerate(decks):
-        card_pos = (50 * card_index)+10
+        card_pos.append((50 * card_index)+10)
         if exposed[card_index] == False:
-            canvas.draw_polygon([(card_pos,10), (card_pos+40,10), (card_pos+40,90),(card_pos,90),(card_pos,10)], 2, 'Red')
+            canvas.draw_polygon([(card_pos[card_index],10), (card_pos[card_index]+40,10), (card_pos[card_index]+40,90),(card_pos[card_index],90),(card_pos[card_index],10)], 2, 'Red')
         else:
-            canvas.draw_text(str(card), (card_pos+10,60), 40, 'Red')
-            canvas.draw_polygon([(card_pos,10), (card_pos+40,10), (card_pos+40,90),(card_pos,90),(card_pos,10)], 2, 'Red')
+            canvas.draw_text(str(card), (card_pos[card_index]+10,60), 40, 'Red')
+            canvas.draw_polygon([(card_pos[card_index],10), (card_pos[card_index]+40,10), (card_pos[card_index]+40,90),(card_pos[card_index],90),(card_pos[card_index],10)], 2, 'Red')
 
 
 # create frame and add a button and labels
