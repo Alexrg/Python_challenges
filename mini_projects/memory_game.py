@@ -27,6 +27,10 @@ def new_game():
     Shuffles randomly the cards deck every new game
     """
     global decks
+    global exposed
+    
+    exposed = [False,False,False,False,False,False,False,False,
+          False,False,False,False,False,False,False,False]
     random.shuffle(decks)
 
      
