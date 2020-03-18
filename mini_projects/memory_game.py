@@ -21,6 +21,8 @@ exposed = [True,False,False,False,False,False,False,False,
           False,False,False,False,False,False,False,False]
 card_pos = []
 game_status = 0
+exposed_card = []
+exposed_card_index = []
 
 # helper function to initialize globals
 def new_game():
@@ -48,15 +50,31 @@ def mouseclick(pos):
     globals:
         exposed (array): An array that contains a truth value of exposure for every card
                          in the deck, true for exposed and false for face down.
-        game_status (number): The status of the current game.
+        exposed_card (array): The exposed cards in order in which they were exposed
+        exposed_card_index (array): The deck index of the exposed cards in order in
+                                    which they were exposed.
     """
     global exposed
     global game_status
+    global exposed_card
+    global exposed_card_index
     
     for card in range(0,len(exposed)):
         if pos[0] >= card_pos[card] and pos[0] <= card_pos[card]+40:
             if exposed[card] == False: 
                 exposed[card] = True
+                game_status += 1
+                exposed_card.append(decks[card])
+                exposed_card_index.append(card)
+                if game_status == 2:
+                    if exposed_card[0] == exposed_card[1]:
+                        print("You Win!")
+                elif game_status == 3:
+                    exposed[exposed_card_index[0]] = False
+                    exposed[exposed_card_index[1]] = False
+                    del exposed_card[0:2]
+                    del exposed_card_index[0:2]
+                    game_status = 1
     
                         
 # cards are logically 50x100 pixels in size    
