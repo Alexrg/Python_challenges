@@ -14,12 +14,13 @@ This code can only be run in https://py3.codeskulptor.org/ since simplegui
 only works there. Create an interactive console thet greets the user.
 """
 
-deck_one = list(range(0, 9))
-deck_two = list(range(0, 9))
+deck_one = list(range(0, 8))
+deck_two = list(range(0, 8))
 decks = deck_one + deck_two
 exposed = [True,False,False,False,False,False,False,False,
           False,False,False,False,False,False,False,False]
 card_pos = []
+game_status = 0
 
 # helper function to initialize globals
 def new_game():
@@ -36,14 +37,26 @@ def new_game():
      
 # define event handlers
 def mouseclick(pos): 
-    # add game state logic here
+    """
+    Logic of the game. State 0 corresponds to the start of the game. In state 0, if
+    you click on a card, that card is exposed, and you switch to state 1. State 1
+    corresponds to a single exposed unpaired card. In state 1, if you click on an
+    unexposed card, that card is exposed and you switch to state 2. State 2
+    corresponds to the end of a turn. In state 2, if you click on an unexposed card,
+    that card is exposed and you switch to state 1
+
+    globals:
+        exposed (array): An array that contains a truth value of exposure for every card
+                         in the deck, true for exposed and false for face down.
+        game_status (number): The status of the current game.
+    """
     global exposed
+    global game_status
     
     for card in range(0,len(exposed)):
         if pos[0] >= card_pos[card] and pos[0] <= card_pos[card]+40:
             if exposed[card] == False: 
                 exposed[card] = True
-                print("Card number {}".format(card+1))
     
                         
 # cards are logically 50x100 pixels in size    
