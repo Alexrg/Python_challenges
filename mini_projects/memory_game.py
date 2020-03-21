@@ -45,7 +45,9 @@ def mouseclick(pos):
     corresponds to a single exposed unpaired card. In state 1, if you click on an
     unexposed card, that card is exposed and you switch to state 2. State 2
     corresponds to the end of a turn. In state 2, if you click on an unexposed card,
-    that card is exposed and you switch to state 1
+    that card is exposed and you switch to state 1. If all exposed cards are paired,
+    a click on an unexposed card exposes the card that was clicked on and does not
+    flip any other cards.
 
     globals:
         exposed (array): An array that contains a truth value of exposure for every card
@@ -61,20 +63,23 @@ def mouseclick(pos):
     
     for card in range(0,len(exposed)):
         if pos[0] >= card_pos[card] and pos[0] <= card_pos[card]+40:
+            
             if exposed[card] == False: 
-                exposed[card] = True
-                game_status += 1
+                exposed[card] = True 
                 exposed_card.append(decks[card])
                 exposed_card_index.append(card)
                 if game_status == 2:
                     if exposed_card[0] == exposed_card[1]:
-                        print("You Win!")
-                elif game_status == 3:
-                    exposed[exposed_card_index[0]] = False
-                    exposed[exposed_card_index[1]] = False
-                    del exposed_card[0:2]
-                    del exposed_card_index[0:2]
-                    game_status = 1
+                        del exposed_card[0:2]
+                        del exposed_card_index[0:2]
+                        game_status = 0
+                    else:
+                        exposed[exposed_card_index[0]] = False
+                        exposed[exposed_card_index[1]] = False
+                        del exposed_card[0:2]
+                        del exposed_card_index[0:2]
+                        game_status = 0
+                game_status += 1
     
                         
 # cards are logically 50x100 pixels in size    
