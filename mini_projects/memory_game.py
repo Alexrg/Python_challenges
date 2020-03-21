@@ -102,6 +102,9 @@ def mouseclick(pos):
 def draw(canvas):
     """
     Draws the deck in the frame
+
+    globals:
+        card_pos (array): The x-axis position of every card in the deck.
     """
     global card_pos
     
