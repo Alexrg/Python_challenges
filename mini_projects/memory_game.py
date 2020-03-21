@@ -28,7 +28,15 @@ turns = 0
 # helper function to initialize globals
 def new_game():
     """
-    Shuffles randomly the cards deck every new game
+    Shuffles randomly the cards deck every new game. Restarts every counter
+    involved in the game.
+
+    globals:
+        decks (array): An array holding both of the decks in a randomized order.
+        exposed (array): An array that contains a truth value of exposure for every card
+                         in the deck, true for exposed and false for face down.
+        game_status (number): The status of the current game.
+        turns (number): How many times the user has clicked on a faced down card.
     """
     global decks
     global exposed
@@ -60,6 +68,7 @@ def mouseclick(pos):
         exposed_card (array): The exposed cards in order in which they were exposed
         exposed_card_index (array): The deck index of the exposed cards in order in
                                     which they were exposed.
+        turns (number): How many times the user has clicked on a faced down card.
     """
     global exposed
     global game_status
