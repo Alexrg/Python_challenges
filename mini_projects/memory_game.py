@@ -23,6 +23,7 @@ card_pos = []
 game_status = 0
 exposed_card = []
 exposed_card_index = []
+turns = 0
 
 # helper function to initialize globals
 def new_game():
@@ -31,10 +32,15 @@ def new_game():
     """
     global decks
     global exposed
+    global game_status
+    global turns
     
     exposed = [False,False,False,False,False,False,False,False,
           False,False,False,False,False,False,False,False]
     random.shuffle(decks)
+    game_status = 0
+    turns = 0
+    turns_label.set_text('Turns: {}'.format(turns))
 
      
 # define event handlers
@@ -45,13 +51,12 @@ def mouseclick(pos):
     corresponds to a single exposed unpaired card. In state 1, if you click on an
     unexposed card, that card is exposed and you switch to state 2. State 2
     corresponds to the end of a turn. In state 2, if you click on an unexposed card,
-    that card is exposed and you switch to state 1. If all exposed cards are paired,
-    a click on an unexposed card exposes the card that was clicked on and does not
-    flip any other cards.
-
+    that card is exposed and you switch to state 1.
+    
     globals:
         exposed (array): An array that contains a truth value of exposure for every card
                          in the deck, true for exposed and false for face down.
+        game_status (number): The status of the current game.
         exposed_card (array): The exposed cards in order in which they were exposed
         exposed_card_index (array): The deck index of the exposed cards in order in
                                     which they were exposed.
@@ -60,6 +65,7 @@ def mouseclick(pos):
     global game_status
     global exposed_card
     global exposed_card_index
+    global turns
     
     for card in range(0,len(exposed)):
         if pos[0] >= card_pos[card] and pos[0] <= card_pos[card]+40:
@@ -80,7 +86,8 @@ def mouseclick(pos):
                         del exposed_card_index[0:2]
                         game_status = 0
                 game_status += 1
-    
+                turns += 1
+                turns_label.set_text('Turns: {}'.format(turns))
                         
 # cards are logically 50x100 pixels in size    
 def draw(canvas):
@@ -103,7 +110,7 @@ def draw(canvas):
 # create frame and add a button and labels
 frame = simplegui.create_frame("Memory", 810, 100)
 frame.add_button("Reset", new_game)
-label = frame.add_label("Turns = 0")
+turns_label = frame.add_label('Turns:')
 
 # register event handlers
 frame.set_mouseclick_handler(mouseclick)
