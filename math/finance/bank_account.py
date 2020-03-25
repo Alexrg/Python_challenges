@@ -23,6 +23,8 @@ class BankAccount:
 
     def get_balance(self):
         """Returns the current balance in the account."""
+        return self.initial_balance - self.fees
 
     def get_fees(self):
         """Returns the total fees ever deducted from the account."""
+        return self.fees
