@@ -5,7 +5,8 @@ class BankAccount:
 
     def deposit(self, amount):
         """Deposits the amount into the account."""
-         
+        self.initial_balance += amount
+        return self.initial_balance 
 
     def withdraw(self, amount):
         """
@@ -13,7 +14,6 @@ class BankAccount:
         resulting in a negative balance also deducts a penalty 
         fee of 5 dollars from the balance.
         """
-        
 
     def get_balance(self):
         """Returns the current balance in the account."""
