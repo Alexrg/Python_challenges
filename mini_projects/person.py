@@ -52,7 +52,32 @@ class Person():
 		age = current_year - self.birth_year
 		return age
 
+def average_age(persons_list, current_year):
+	"""
+	Retrurns the age average of a group of people
+		
+	Args:
+		persons_list (list): List of people
+		current_year (number): The current year
+
+	Returtns:
+		age_average (number): The average age of the group of people
+	"""
+	age_sum = 0
+	age_average = 0
+
+	for person in person_list:
+		age_sum += person.age(current_year=current_year)
+
+	age_average = age_sum/len(persons_list)
+
+	return age_average
+
 alejandra = Person(first_name="Alejandra", last_name="Rodríguez",birth_year=1992)
-print(alejandra)
-print(alejandra.full_name())
-print(alejandra.age(current_year=2020))
+miguel = Person(first_name="Miguel", last_name="Rodríguez",birth_year=1993)
+claudia = Person(first_name="Claudia", last_name="Rodríguez",birth_year=1987)
+raul = Person(first_name="Raul", last_name="Zazueta",birth_year=1963)
+
+person_list = [alejandra, miguel, claudia, raul]
+
+average = average_age(persons_list=person_list, current_year=2020)
