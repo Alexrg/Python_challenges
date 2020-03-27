@@ -11,3 +11,17 @@ class Student():
 		"""
 		self.person = person
 		self.password = password
+
+	def get_name(self):
+		"""
+		Returns the full name os the student.
+		
+		Returns:
+			student_name (string): Student's full name
+		"""
+		student_name = self.person.full_name()
+		return 
+
+
+alejandra = Person(first_name="Alejandra", last_name="Rodríguez",birth_year=1992)
+student_alejandra = Student(person=alejandra,password="123456")
