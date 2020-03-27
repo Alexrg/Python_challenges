@@ -11,6 +11,7 @@ class Student():
 		"""
 		self.person = person
 		self.password = password
+		self.student_projects = []
 
 	def get_name(self):
 		"""
@@ -30,11 +31,22 @@ class Student():
 			check (boolean): A truth value depending on the comparission.
 		"""
 		check = self.password == password
-		
 		return check
+
+	def add_projects(self, project_name):
+		"""
+		Add the given project to the student's projects.
+
+		Returns:
+			self.student_projects (list): A list of the student's projects.
+		"""
+		self.student_projects.append(project_name)
+		return self.student_projects
 
 
 alejandra = Person(first_name="Alejandra", last_name="Rodríguez",birth_year=1992)
 student_alejandra = Student(person=alejandra,password="123456")
-student_alejandra_pass = student_alejandra.check_password("123456") 
-print(student_alejandra_pass)
+print(student_alejandra.check_password("123456"))
+print(student_alejandra.add_projects("Blackjack Minigame"))
+print(student_alejandra.add_projects("Memory Minigame"))
+print(student_alejandra.student_projects)
