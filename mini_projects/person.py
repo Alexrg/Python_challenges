@@ -7,12 +7,23 @@ class Person():
 		Args:
 			firts_name (string): The person's first name
 			last_name (string): The person's last name
-			birth_year (int): The person's birth year
+			birth_year (number): The person's birth year
 		"""
 		
 		self.first_name = first_name
 		self.last_name = last_name
 		self.birth_year = birth_year
+
+	def __str__(self):
+		"""
+		Returns all the information of the person in form of a string
+
+		Returns:
+			personal_information (string): The information of the person
+		"""
+		
+		personal_information = "The person's name is {}, their birth year is {}".format(self.full_name(), self.birth_year)
+		return personal_information
 
 	def full_name(self):
 		"""
@@ -26,5 +37,22 @@ class Person():
 		full_name = "{} {}".format(self.first_name, self.last_name)
 		return full_name
 
-alejandra = Person("Alejandra", "Rodríguez",1992)
+	def age(self, current_year):
+		"""
+		Retrurns the age of the person by substracting it's birth year from the
+		current year
+		
+		Args:
+			current_year (number): The current year
+
+		Returtns:
+			age (number): The age of the person
+		"""
+
+		age = current_year - self.birth_year
+		return age
+
+alejandra = Person(first_name="Alejandra", last_name="Rodríguez",birth_year=1992)
+print(alejandra)
 print(alejandra.full_name())
+print(alejandra.age(current_year=2020))
