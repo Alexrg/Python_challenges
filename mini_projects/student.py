@@ -20,8 +20,21 @@ class Student():
 			student_name (string): Student's full name
 		"""
 		student_name = self.person.full_name()
-		return 
+		return student_name
+
+	def check_password(self, password):
+		"""
+		Check if the student's given password was the created password.
+
+		Returns:
+			check (boolean): A truth value depending on the comparission.
+		"""
+		check = self.password == password
+		
+		return check
 
 
 alejandra = Person(first_name="Alejandra", last_name="Rodríguez",birth_year=1992)
 student_alejandra = Student(person=alejandra,password="123456")
+student_alejandra_pass = student_alejandra.check_password("123456") 
+print(student_alejandra_pass)
