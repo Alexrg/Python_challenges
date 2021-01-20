@@ -56,4 +56,11 @@ for index, name in enumerate(names_list):
 
 print(students)
 
-
+for student in students.keys():
+	message = "Hi {},\n\nThis is a reminder that you have {} assignments left to\
+	submit before you can graduate. You're current grade is {} and can increase to\
+	{} if you submit all assignments before the due date.\n\n".format(student,
+		students[student].get('Assignments'),students[student].get('Grade'),
+		students[student].get('Grade')+10)
+	
+	print(message)
