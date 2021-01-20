@@ -8,6 +8,7 @@ and just have to insert them into placeholders in a message you came up with.
 names = input('Enter names separeted by commas: ')
 assignments = input('Enter the number of assignments separeted by commas: ')
 grades = input('Enter grades separeted by commas: ')
+students = {}
 
 class ListConverter():
 	"""
@@ -20,21 +21,21 @@ class ListConverter():
 		self.input_string = input_string
 
 	def string_list(self):
-	"""
-	Converts the receibed string to a list of names.
+		"""
+		Converts the receibed string to a list of names.
 
-	Returns:
-		(list): A list containing the student's names.
-	"""
+		Returns:
+			(list): A list containing the student's names.
+		"""
 		return self.input_string.split(',')
 
 	def number_list(self):
-	"""
-	Converts the receibed string to a list of numbers.
+		"""
+		Converts the receibed string to a list of numbers.
 
-	Returns:
-		(list): A list containing the student's data (grades or assignment number).
-	"""
+		Returns:
+			(list): A list containing the student's data (grades or assignment number).
+		"""
 		number_list = self.string_list()
 
 		for index, element in enumerate(number_list):
@@ -49,3 +50,10 @@ grades_list = ListConverter(grades).number_list()
 print("names: {} ".format(names_list))
 print("grades: {} ".format(assignments_list))
 print("grades: {} ".format(grades_list))
+
+for index, name in enumerate(names_list):
+	students[name] = {'Assignments':assignments_list[index],'Grade':grades_list[index]}
+
+print(students)
+
+
