@@ -4,12 +4,6 @@ reminding them of their missing assignments and grade in the class. You have
 each of their names, number of missing assignments, and grades on a spreadsheet
 and just have to insert them into placeholders in a message you came up with.
 """
-
-names = input('Enter names separeted by commas: ')
-assignments = input('Enter the number of assignments separeted by commas: ')
-grades = input('Enter grades separeted by commas: ')
-students = {}
-
 class ListConverter():
 	"""
 	Converts the receibed string to a list of either strings or numbers.
@@ -39,9 +33,20 @@ class ListConverter():
 		number_list = self.string_list()
 
 		for index, element in enumerate(number_list):
-			number_list[index] = int(element)
+			try:
+				number_list[index] = int(element)
+			except ValueError:
+				print("The value entered was not a number")
+				break
 
 		return number_list
+
+
+names = input('Enter names separeted by commas: ')
+assignments = input('Enter the number of assignments separeted by commas: ')
+grades = input('Enter grades separeted by commas: ')
+
+students = {}
 
 names_list = ListConverter(names).string_list()
 assignments_list = ListConverter(assignments).number_list()
