@@ -17,9 +17,31 @@ def read_file(file):
 		lines (list): The list containing the text lines.
 	"""
 	lines = []
+	
 	with open("flowers.txt") as flowers_file:
 	    lines = flowers_file.readlines()
+	
 	return lines
 
+def create_dictionary(flower_list):
+	"""
+	From the receibed list, create a dictionary with the flower_list.
+
+	Args:
+		flower_list (list): A list with the flowers and first letter.
+
+	Returns:
+		flower_dictionary (dictionary): A dictionary that pairs the flower with it's
+										inital letter.
+	"""
+	flower_dictionary = {}
+
+	for flower in flower_list:
+		flower_dictionary[flower.split(":")[0]] = flower.split(":")[1]
+
+	return flower_dictionary
+
+
 lines = read_file("flowers.txt")
-print(lines)
+flower_dictionary = create_dictionary(lines)
+print(flower_dictionary['A'])
