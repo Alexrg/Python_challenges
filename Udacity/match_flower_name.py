@@ -44,4 +44,8 @@ def create_dictionary(flower_list):
 
 lines = read_file("flowers.txt")
 flower_dictionary = create_dictionary(lines)
-print(flower_dictionary['A'])
+user_name = input('Enter your name: ').capitalize()
+unique_flower = flower_dictionary[user_name[0]]
+
+print("Unique flower name with the first letter: {}".format(unique_flower))
+
