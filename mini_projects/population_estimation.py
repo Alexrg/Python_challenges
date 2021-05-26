@@ -35,7 +35,7 @@ class Population_estimation():
 		"""
 		Calculates the birth growth of a year.
 		"""
-		birth_year_growth = self.birth_rate/60*24*365
+		birth_year_growth = (60/self.birth_rate)*60*24*365
 
 		return birth_year_growth
 
@@ -43,7 +43,7 @@ class Population_estimation():
 		"""
 		Calculates the death growth of a year.
 		"""
-		death_year_growth = self.death_rate/60*24*365
+		death_year_growth = (60/self.death_rate)*60*24*365
 
 		return death_year_growth
 
@@ -51,7 +51,7 @@ class Population_estimation():
 		"""
 		Estimates the population growth in a year
 		"""
-		yearly_population = int(self.current_population + self.birth_growth() - self.death_growth())s
+		yearly_population = int(self.current_population + self.birth_growth() - self.death_growth())
 
 		return yearly_population
 
