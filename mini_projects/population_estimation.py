@@ -25,16 +25,38 @@ class Population_estimation():
 	"""
 	Estimate the population growth.
 	"""
-	def __init__(self, birth_rate):
+	def __init__(self, birth_rate, death_rate):
 		self.birth_rate = birth_rate
-		self.yearly_population = self.birth_growth(self.birth_rate)
+		self.death_rate = death_rate
+		self.yearly_growth = self.yearly_calculation()
 
-	def birth_growth(self, birth_rate):
+	def birth_growth(self):
 		"""
 		Calculates the birth growth of a year.
 		"""
-		birth_year_growth = birth_rate*60*24*365
+		birth_year_growth = self.birth_rate*60*24*365
 
 		return birth_year_growth
 
-print(Population_estimation(birth_rate=BIRTH_RATE).yearly_population)
+	def death_growth(self):
+		"""
+		Calculates the death growth of a year.
+		"""
+		death_year_growth = self.death_rate*60*24*365
+
+		return death_year_growth
+
+	def yearly_calculation(self):
+		"""
+		Estimates the population growth in a year
+		"""
+		yearly_population = self.birth_growth() - self.death_growth()
+
+		return yearly_population
+
+
+
+population = Population_estimation(birth_rate=BIRTH_RATE, death_rate=DEATH_RATE)
+yearly_population = population.yearly_growth
+
+print(yearly_population)
