@@ -21,5 +21,20 @@ BIRTH_RATE = 7
 DEATH_RATE = 13
 IMMIGRANT_RATE = 35
 
-print(CURRENT_YEAR)
+class Population_estimation():
+	"""
+	Estimate the population growth.
+	"""
+	def __init__(self, birth_rate):
+		self.birth_rate = birth_rate
+		self.yearly_population = self.birth_growth(self.birth_rate)
 
+	def birth_growth(self, birth_rate):
+		"""
+		Calculates the birth growth of a year.
+		"""
+		birth_year_growth = birth_rate*60*24*365
+
+		return birth_year_growth
+
+print(Population_estimation(birth_rate=BIRTH_RATE).yearly_population)
