@@ -15,20 +15,24 @@ import datetime
 CURRENT_POPULATION = 307357870
 CURRENT_DATETIME = datetime.datetime.now()
 CURRENT_DATE = CURRENT_DATETIME.date()
-CURRENT_YEAR = CURRENT_DATE.strftime("%Y")
+CURRENT_YEAR = int(CURRENT_DATE.strftime("%Y"))
 
 BIRTH_RATE = 7
 DEATH_RATE = 13
 IMMIGRANT_RATE = 35
 
+year_to_calculate = 2024
+
 class Population_estimation():
 	"""
 	Estimate the population growth.
 	"""
-	def __init__(self, current_population,birth_rate, death_rate):
-		self.current_population = current_population
+	def __init__(self, current_population,birth_rate, death_rate, current_year, year_to_calculate):
+		self.current_population = int(current_population)
 		self.birth_rate = birth_rate
 		self.death_rate = death_rate
+		self.current_year = current_year
+		self.year_to_calculate = int(year_to_calculate)
 		self.yearly_growth = self.yearly_calculation()
 
 	def birth_growth(self):
@@ -51,13 +55,20 @@ class Population_estimation():
 		"""
 		Estimates the population growth in a year
 		"""
-		yearly_population = int(self.current_population + self.birth_growth() - self.death_growth())
+		years_to_calculate = self.year_to_calculate - self.current_year
+
+		yearly_population = 0
+
+		for years in range(1,years_to_calculate):
+			yearly_population += int(self.current_population + self.birth_growth() - self.death_growth())
 
 		return yearly_population
 
 
 
-population = Population_estimation(current_population=CURRENT_POPULATION,birth_rate=BIRTH_RATE, death_rate=DEATH_RATE)
+population = Population_estimation(current_population=CURRENT_POPULATION,birth_rate=BIRTH_RATE, death_rate=DEATH_RATE,
+	current_year=CURRENT_YEAR, year_to_calculate=year_to_calculate)
 yearly_population = population.yearly_growth
 
-print(yearly_population)
+print("{} population: {}".format(CURRENT_YEAR, CURRENT_POPULATION))
+print("{} population: {}".format(year_to_calculate, yearly_population))
