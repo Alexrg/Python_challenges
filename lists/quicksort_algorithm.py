@@ -21,5 +21,21 @@ class Quicksort():
 
 		return random_list
 
-number_list = Quicksort().integer_list
+	def choose_pivot(self):
+		"""
+		To choose the pivot number, divide the list in half so the middle number
+		is the pivot.
+
+		Returns:
+			pivot_number (integer): The pivot number of the list
+		"""
+		pivot_index = int(len(self.integer_list)/2)
+		pivot_number = self.integer_list[pivot_index]
+
+		return pivot_number
+
+quicksort_method = Quicksort()
+number_list = quicksort_method.integer_list
+pivot_number = quicksort_method.choose_pivot()
 print(number_list)
+print(pivot_number)
