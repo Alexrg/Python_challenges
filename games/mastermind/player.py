@@ -1,27 +1,21 @@
 import random 
 
-pegs = ['blue', 'yellow', 'green', 'red']
+pegs = ['blue', 'yellow', 'green', 'red', 'white', 'pink']
 
 class Player():
 	def create_guess_code(self, pegs):
 		"""
-		Creates a randomized new code
+		Creates a randomized new peg code of four colors.
 
 		Args:
 			pegs (list): The colored pegs list
 
 		Returns:
-			pegs (list): The randomized colored pegs list
+			selected_pegs (list): The randomized four elements of colored pegs list.
 		"""
-		random.shuffle(pegs)
+		selected_pegs = random.sample(pegs, 4)
 		
-		return pegs
+		return selected_pegs
 
-# Se debería de poder elegir si es pc-pc, pc-jugador, jugador-pc, jugador-jugador
-# player (clase mama) --> person (clase hija)
-# player (clase mama)  --> pc (clase hija)
-# elegir pegs para adivinar
-# decidir si los pegs son correctos
-
-guess_code = player().create_guess_code(pegs)
+guess_code = Player().create_guess_code(pegs)
 print(guess_code)
