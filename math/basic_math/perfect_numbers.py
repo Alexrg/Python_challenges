@@ -24,4 +24,17 @@ def divisors(integer):
     
     return divisors
 
-print(divisors(34))
+def sum_numbers(divisors_list):
+	"""
+	Sum the numbers of the given list.
+	"""
+	total_sum = 0
+
+	for number in divisors_list:
+		total_sum += number
+
+	return total_sum
+
+get_divisors = divisors(6)
+print(get_divisors)
+print(sum_numbers(get_divisors))
