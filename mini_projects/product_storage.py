@@ -28,7 +28,7 @@ def create_product():
 	"""
 	created_product = Product(name=input("Enter product: "), 
 							price=int(input("Enter product price: ")))
-	print(type(created_product))
+
 	return created_product
 
 def add_products():
@@ -48,4 +48,15 @@ def add_products():
 	
 	return products_tuple
 
-print(add_products())
+def print_products(products_tuple):
+	"""
+	Prints in screen all the products and it's prices.
+	"""
+	for element in products_tuple:
+		print("Product: {} Price: {}".format(element.name, element.price))
+
+	return None
+
+products = add_products()
+print_products(products)
+
