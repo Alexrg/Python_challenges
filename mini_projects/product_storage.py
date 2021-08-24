@@ -30,3 +30,22 @@ def create_product():
 							price=int(input("Enter product price: ")))
 	print(type(created_product))
 	return created_product
+
+def add_products():
+	"""
+	Adds the created instances of the product made by the user.
+
+	Returns:
+		products_tuple (tuple): A tuple containing all the objects created by the user.
+	"""
+	add_more = 0
+	products_tuple = ()
+	
+	while add_more == 0:
+		products_tuple += (create_product(),)
+
+		add_more = int(input("More products? yes (0), no (1): "))
+	
+	return products_tuple
+
+print(add_products())
