@@ -18,3 +18,15 @@ class Product(object):
 	def __init__(self, name, price):
 		self.name = name
 		self.price = price
+
+def create_product():
+	"""
+	Creates an instance of the product object.
+
+	Returns:
+		created_product (object): The product object instance.
+	"""
+	created_product = Product(name=input("Enter product: "), 
+							price=int(input("Enter product price: ")))
+	print(type(created_product))
+	return created_product
