@@ -26,8 +26,11 @@ def create_product():
 	Returns:
 		created_product (object): The product object instance.
 	"""
-	created_product = Product(name=input("Enter product: "), 
-							price=int(input("Enter product price: ")))
+	try:
+		created_product = Product(name=input("Enter product: "),
+								price=int(input("Enter product price: ")))
+	except ValueError:
+		print("You entered a wrong value for the product price")
 
 	return created_product
 
