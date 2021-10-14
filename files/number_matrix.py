@@ -21,17 +21,24 @@ def extract_matrix_number(file_name):
 		file_name (string): The name file
 
 	Returns:
-		file_matrux (numpy matrix): The number matrix from the file
+		file_matrix (Pandas object): The number matrix from the file
 	"""
-	file = pandas.read_csv(file_name, header=None)
-	file_matrix = file.to_numpy()
+	file_matrix = pandas.read_csv(file_name, header=None)
 
 	return file_matrix
 
-	def sum_columns():
-		file_name = "matrix_number.csv"
-		matrix_number = extract_matrix_number(file_name)
+def sum_columns():
+	"""
+	Sums all the columns of a pandas object.
 
-		return matrix_number.sum()
+	Returns:
+		matrix_number.sum() (Pandas object): The columns added.
+	"""
+	file_name = "matrix_number.csv"
+	matrix_number = extract_matrix_number(file_name)
 
-print(sum_columns())
+	return matrix_number.sum()
+
+x = sum_columns()
+print(x)
+print(type(x))
