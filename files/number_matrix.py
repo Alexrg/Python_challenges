@@ -10,7 +10,6 @@ the sum of the column 0 will be 1 + 5 + 9 = 15 and the sum of the column 2 will
 be 3 + 7 + 11 = 21
 """
 import pandas
-import numpy
 
 def extract_matrix_number(file_name):
 	"""
