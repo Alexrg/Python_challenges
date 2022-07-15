@@ -32,3 +32,14 @@ class Name:
         """
         self.first_name = first_name
         self.last_name = last_name
+
+    def find_printed_name(self):
+        """
+        Using the class attributes, returns the first and
+        last name with a space in between, e.g. "David Joyner"
+        
+        Returtns:
+            (string) = A string combining the first and last
+                       name with a space in between.
+        """
+        return "{} {}".format(self.first_name,self.last_name)
