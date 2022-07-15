@@ -56,3 +56,10 @@ class Name:
                        and a comma in between.
         """
         return "{}, {}".format(self.last_name,self.first_name[0])
+
+# Test your class
+test_name = Name("David", "Joyner")
+print(test_name.first_name)
+print(test_name.last_name)
+print(test_name.find_printed_name())
+print(test_name.find_sortable_name())
