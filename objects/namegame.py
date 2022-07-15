@@ -43,3 +43,16 @@ class Name:
                        name with a space in between.
         """
         return "{} {}".format(self.first_name,self.last_name)
+
+    def find_sortable_name(self):
+        """
+        Using the class attributes, returns the last name,
+        then a comma and space, and then only the first
+        initial, e.g. "Joyner, D".
+        
+        Returtns:
+            (string) = A string combining the last name and the
+                       first letter of the first name wit a space
+                       and a comma in between.
+        """
+        return "{}, {}".format(self.last_name,self.first_name[0])
