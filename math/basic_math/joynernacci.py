@@ -69,3 +69,12 @@ def joynernacci(given_number):
             fibonacci.insert(number-1,fibonacci[number-2] + fibonacci[number-3])
             
     return fibonacci[given_number-1]
+
+#Below are some lines of code that will test your function.
+#You can change the value of the variable(s) to test your
+#function with different inputs.
+#
+#If your function works correctly, this will originally
+#print: 1, then 8
+print(joynernacci(5))
+print(joynernacci(12))
