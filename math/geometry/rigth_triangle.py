@@ -36,3 +36,18 @@ class RightTriangle:
         """
         self.opposite = opposite
         self.adjacent = adjacent
+
+    def find_hypotenuse(self):
+        """
+        Calculates the hypotenuse based on the current
+        values for the opposite and adjacent attributes.
+
+        The formula for hypotenuse is the square root of
+        opposite squared plus adjacent squared. The easiest
+        way to find the square root is to use the exponent
+        operator to raise the sum to the 0.5 power
+        
+        Reurns:
+            (float): The calculated hypothenuse
+        """
+        return sqrt(pow(self.opposite, 2) + pow(self.adjacent, 2))
