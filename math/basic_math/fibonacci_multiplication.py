@@ -33,3 +33,25 @@
 
 #Hint: You will actually have two separate base cases,
 #one for n = 1 and one for n = 2.
+
+def fib_mult(given_number):
+    """
+    Receibes an input an integer, and returns the FibMult
+    number corresponding to that integer. Fibonacci's
+    multiplicative sequence is identical to Fibonacci's
+    sequence, except that each number is the PRODUCT of the
+    previous two numbers instead of the sum.
+    
+    Args:
+        given_number (int): The limit number of the Fibonacci's
+        multiplication sequence.
+        
+    Returns:
+        (int): The Fibonacci's multiplication sequence last number.
+    """
+    if given_number == 1:
+        return given_number
+    elif given_number == 2:
+        return given_number * 1
+    else:
+        return fib_mult(given_number-1) * fib_mult(given_number-2)
