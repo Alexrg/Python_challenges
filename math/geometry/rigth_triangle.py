@@ -25,3 +25,14 @@
 #opposite squared plus adjacent squared. The easiest way to
 #find the square root is to use the exponent operator to
 #raise the sum to the 0.5 power (e.g. sum**0.5).
+
+from math import pow, sqrt
+
+class RightTriangle:
+    def __init__(self,opposite,adjacent):
+        """
+        Initiates the value of the opposite and adjacent
+        side of the triangle
+        """
+        self.opposite = opposite
+        self.adjacent = adjacent
