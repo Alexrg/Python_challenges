@@ -55,3 +55,10 @@ def fib_mult(given_number):
         return given_number * 1
     else:
         return fib_mult(given_number-1) * fib_mult(given_number-2)
+
+#The lines below will test your code. If your funciton is
+#correct, they will print 1, 2, 2, and 2097152.
+print(fib_mult(1))
+print(fib_mult(2))
+print(fib_mult(3))
+print(fib_mult(9))
