@@ -51,3 +51,9 @@ class RightTriangle:
             (float): The calculated hypothenuse
         """
         return sqrt(pow(self.opposite, 2) + pow(self.adjacent, 2))
+
+#The code below will test your function. If it works, it should print 3.0, 4.0, and 5.0 in that order.
+test_triangle = RightTriangle(3.0, 4.0)
+print(test_triangle.opposite)
+print(test_triangle.adjacent)
+print(test_triangle.find_hypotenuse())
