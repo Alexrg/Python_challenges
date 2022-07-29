@@ -35,3 +35,10 @@ def count_capital_consonants(given_string):
             capital_consonant_count += 1
     
     return capital_consonant_count
+
+#The lines below will test your code. Feel free to modify
+#them. If your code is working properly, these will print
+#the same output as shown above in the examples.
+print(count_capital_consonants("Georgia Tech"))
+print(count_capital_consonants("GEORGIA TECH"))
+print(count_capital_consonants("gEOrgIA tEch"))
