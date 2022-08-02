@@ -30,3 +30,20 @@
 #2 is in index_list twice, so the string at index 2 is
 #switched twice: capitals to lower case, then back to
 #capitals.
+
+def invert_capitalization(word):
+    """
+    Receibes a word, that will be inverted into capital letters
+    if it's lower or lower cases if the word is all capitalized.
+    
+    Args:
+        word (string): A given word, all lower or upper cases.
+    
+    Returns:
+        (string): The given word inverted to all lower or all
+        upper cases.
+    """
+    if word.islower():
+        return word.upper()
+    else:
+        return word.lower()
