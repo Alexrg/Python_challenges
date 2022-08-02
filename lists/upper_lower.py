@@ -47,3 +47,21 @@ def invert_capitalization(word):
         return word.upper()
     else:
         return word.lower()
+
+def alter_list(word_list, index_list):
+    """
+    Selects from a list of words, the words from the given indexes
+    to invert it's capitalization. If the word was all
+    capitals, it should become all lower case. If it was all
+    lower case, it should become all capitals. You may assume
+    that the words will already be all-caps or all-lower case.
+    
+    Args:
+        word_list (list): A given list of words.
+        index_list (list): The list of integers will represent
+        indices for the list of strings. 
+    """
+    for index in index_list:
+        word_list[index] = invert_capitalization(word_list[index])
+    
+    return word_list
