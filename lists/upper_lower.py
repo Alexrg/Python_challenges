@@ -65,3 +65,14 @@ def alter_list(word_list, index_list):
         word_list[index] = invert_capitalization(word_list[index])
     
     return word_list
+
+#Below are some lines of code that will test your function.
+#You can change the value of the variable(s) to test your
+#function with different inputs.
+#
+#If your function works correctly, this will originally
+#print:
+#["HELLO", "WORLD", "how", "are", "you"]
+#["HELLO", "WORLD", "HOW", "are", "you"]
+print(alter_list(["hello", "WORLD", "HOW", "are", "you"], [0, 2]))
+print(alter_list(["hello", "WORLD", "HOW", "are", "you"], [0, 2, 2]))
