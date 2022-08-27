@@ -105,3 +105,23 @@ class Product():
             (string): User data in a readable format.
         """
         return "Product name: {} - Product description: {} - Product price: {}".format(self.product_name,self.product_description,self.price)
+
+    @property
+    def availability(self):
+        """
+        The availability of the product.
+        
+        Returns:
+            (bool): True or False, depending if it's being sold or bougth.
+        """
+        return self.available
+
+    @availability.setter
+    def availability(self, available):
+        """
+        Set the availability of the product after bougth.
+        
+        Returns:
+            (bool): True or False, depending if it's being sold or bougth.
+        """
+        return available
