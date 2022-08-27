@@ -140,3 +140,23 @@ class Product():
         Appends the review to a list.
         """
         self.reviews.append(review)
+
+class Review():
+    def __init__(self, user_review, product, user_name):
+    	"""
+        A Review will contain the user name of the buyer's name, the review
+        and the product's name.
+        """
+        self.user_review = user_review
+        self.product = product
+        self.user_name = user_name
+
+    def __str__(self):
+        """
+        Print the product'review data: username, user's review and
+        product. Made for debugging purposes.
+        
+        Returns:
+            (string): Review data in a readable format.
+        """
+        return "{}'s review of {}: {}".format(self.user_name,self.product,self.user_review)
