@@ -134,3 +134,9 @@ class Product():
             (string): Seller's name.
         """
         return seller
+
+    def set_review(self,review):
+        """
+        Appends the review to a list.
+        """
+        self.reviews.append(review)
