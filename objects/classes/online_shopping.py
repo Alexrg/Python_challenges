@@ -44,3 +44,21 @@ class User():
             (string): User data in a readable format.
         """
         return "User name: {}".format(self.user_name)
+
+    def sell_product(self,product_name,product_description,price):
+        """
+        Print the user data: name and id. Made for debugging purposes.
+        
+        Args:
+            product_name (string): The name of the product that will be sell.
+            product_description (string): The description of the product
+            that will be sell.
+            price (int): The price of the product that will be sell.
+        
+        Returns:
+            product_to_sel (object): An instance of the product class.
+        """
+        product_to_sell = Product(product_name,product_description,price)
+        product_to_sell.available = True
+        
+        return product_to_sell
