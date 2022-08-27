@@ -23,3 +23,15 @@ print(review in mary.reviews)  # => True
 print(review in keyboard.reviews)  # => True
 
 """
+class User():
+    def __init__(self, user_id, user_name):
+        """
+        The User class stores the id, name and their given reviews.
+        
+        Args:
+            user_id (int): User's identification number.
+            user_name (string): User's first name.
+        """
+        self.user_id = user_id
+        self.user_name = user_name
+        self.reviews = []
