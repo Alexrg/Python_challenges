@@ -62,3 +62,9 @@ class User():
         product_to_sell.available = True
         
         return product_to_sell
+
+    def buy_product(self, product):
+        """
+        Changes the availability of the product to False when bougth.
+        """
+        product.available = False
