@@ -68,3 +68,17 @@ class User():
         Changes the availability of the product to False when bougth.
         """
         product.available = False
+
+    def write_review(self, user_review, product):
+        """
+        Appends the review written to the product sold and the user that
+        bougth it.
+        
+        Returns:
+            review (object): The username, the product bougth and name.
+        """
+        review = Review(user_review, product.product_name,self.user_name)
+        self.reviews.append(review)
+        product.set_review(review)
+        
+        return review
