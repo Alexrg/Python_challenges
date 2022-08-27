@@ -94,3 +94,14 @@ class Product():
         self.price = price
         self.available = available
         self.reviews = []
+
+    def __str__(self):
+        """
+        Print the product data: name, description, seller,
+        collection of reviews,  price, and it's availability.
+        Made for debugging purposes.
+        
+        Returns:
+            (string): User data in a readable format.
+        """
+        return "Product name: {} - Product description: {} - Product price: {}".format(self.product_name,self.product_description,self.price)
