@@ -160,3 +160,19 @@ class Review():
             (string): Review data in a readable format.
         """
         return "{}'s review of {}: {}".format(self.user_name,self.product,self.user_review)
+
+if __name__ == '__main__':
+    brianna = User(1, 'Brianna')
+    mary = User(2, 'Mary')
+    print(brianna)
+    print(mary)
+    
+    keyboard = brianna.sell_product('Keyboard', 'A nice mechanical keyboard', 100)
+    print(keyboard)
+    print(keyboard.available)
+    mary.buy_product(keyboard)
+    print(keyboard.available)
+    review = mary.write_review('This is the best keyboard ever!', keyboard)
+    print(review)
+    print(review in mary.reviews)
+    print(review in keyboard.reviews)
