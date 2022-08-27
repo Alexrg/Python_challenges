@@ -125,3 +125,12 @@ class Product():
             (bool): True or False, depending if it's being sold or bougth.
         """
         return available
+
+    def seller(self,seller):
+        """
+        Returns the name of the seller.
+        
+        Returns:
+            (string): Seller's name.
+        """
+        return seller
