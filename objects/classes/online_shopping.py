@@ -35,3 +35,12 @@ class User():
         self.user_id = user_id
         self.user_name = user_name
         self.reviews = []
+
+    def __str__(self):
+        """
+        Print the user data: name and id. Made for debugging purposes.
+        
+        Returns:
+            (string): User data in a readable format.
+        """
+        return "User name: {}".format(self.user_name)
