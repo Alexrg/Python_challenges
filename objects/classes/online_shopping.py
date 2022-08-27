@@ -82,3 +82,15 @@ class User():
         product.set_review(review)
         
         return review
+
+class Product():
+    def __init__(self,product_name,product_description,price, available = True):
+        """
+        A Product will contain a name, a description, a seller, a collection of
+        reviews, a price, and it's availability.
+        """
+        self.product_name = product_name
+        self.product_description = product_description
+        self.price = price
+        self.available = available
+        self.reviews = []
