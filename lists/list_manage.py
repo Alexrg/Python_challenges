@@ -4,7 +4,7 @@ lista de números. El programa debe:
 1. Sumar todos los números de la lista.
 2. Calcular el promedio de los números.
 3. Devolver una lista con los números pares encontrados.
-4. Crear una fuinción que muestre todos estos resultados al usuario.
+4. Crear una función que muestre todos estos resultados al usuario.
 
 Paso a paso
 1. Crear una función llamada sumar_lista:
@@ -30,8 +30,8 @@ def sumar_lista(lista_numeros):
 	
 	return total_suma
 
-def calcular_promedio(suma, lista):
-	conteo = len(lista)
+def calcular_promedio(suma, lista_numeros):
+	conteo = len(lista_numeros)
 	promedio = suma / conteo
 	
 	return promedio
