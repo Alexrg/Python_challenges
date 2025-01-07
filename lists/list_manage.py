@@ -24,19 +24,49 @@ Paso a paso
 """
 
 def sumar_lista(lista_numeros):
+	"""
+    Suma todos los números en una lista.
+
+    Args:
+        lista_numeros (list): Lista de números a sumar.
+
+    Returns:
+        int: La suma total de los números en la lista.
+    """
 	total_suma = 0
 	for numero in lista_numeros:
+		print(f"total suma: {total_suma} - numero: {numero}")
 		total_suma += numero
+		print(f"resultado: {total_suma}")
 	
 	return total_suma
 
 def calcular_promedio(suma, lista_numeros):
+	"""
+    Calcula el promedio de una lista de números.
+
+    Args:
+        suma (int): La suma de los números de la lista.
+        lista_numeros (list): Lista de números.
+
+    Returns:
+        float: El promedio de los números en la lista.
+    """
 	conteo = len(lista_numeros)
 	promedio = suma / conteo
 	
 	return promedio
 
 def filtrar_pares(lista_numeros):
+	"""
+    Filtra los números pares de una lista.
+
+    Args:
+        lista_numeros (list): Lista de números a filtrar.
+
+    Returns:
+        list: Lista de números pares encontrados en la lista original.
+    """
 	numeros_pares = []
 
 	for numero in lista_numeros:
@@ -46,6 +76,17 @@ def filtrar_pares(lista_numeros):
 	return numeros_pares
 
 def analizar_lista(lista_numeros):
+	"""
+    Analiza una lista de números realizando varias operaciones:
+    suma total, promedio y filtrado de números pares.
+    Muestra los resultados al usuario.
+
+    Args:
+        lista_numeros (list): Lista de números a analizar.
+
+    Returns:
+        None
+    """
 	total_suma = sumar_lista(lista_numeros)
 	total_promedio = calcular_promedio(total_suma, lista_numeros)
 	pares = filtrar_pares(lista_numeros)
